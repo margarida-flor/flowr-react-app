@@ -1,7 +1,5 @@
 import React from "react";
 
-import Details from "./Details";
-
 export default function Header() {
   return (
     <div className="Header">
@@ -19,7 +17,20 @@ export default function Header() {
           </form>
         </div>
         <div className="col-6">
-          <Details />
+          <div className="Details">
+            <div className="row">
+              <div className="col-4">19:20</div>
+              <div className="col-4">Monday</div>
+              <div className="col-4">2019.11.11</div>
+
+              <div className="row">
+                <div className="col-6" />
+                <div className="col-6">
+                  <button className="current-place">Current Location</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
