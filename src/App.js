@@ -9,8 +9,10 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Body />
+      <div className="container">
+        <Header />
+        <Body />
+      </div>
     </div>
   );
 }
