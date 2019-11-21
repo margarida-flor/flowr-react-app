@@ -10,9 +10,7 @@ export default function Icon() {
         className="mx-auto"
       />
 
-      <div id="description" className="weather-description">
-        few clouds
-      </div>
+      <div className="weather-description">few clouds</div>
     </div>
   );
 }
