@@ -1,6 +1,5 @@
 import React from "react";
 
-import Search from "./Search";
 import Details from "./Details";
 
 export default function Header() {
@@ -8,7 +7,16 @@ export default function Header() {
     <div className="Header">
       <div className="row">
         <div className="col-6">
-          <Search />
+          <form>
+            <input
+              type="search"
+              placeholder="Enter a city"
+              className="form-control"
+              autoComplete="off"
+            />
+
+            <input type="submit" value="search" />
+          </form>
         </div>
         <div className="col-6">
           <Details />
