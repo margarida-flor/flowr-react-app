@@ -6,15 +6,13 @@ import Conditions from "./Conditions";
 
 import "./Body.css";
 
-export default class Body extends React.Component {
-  render = () => {
-    return (
-      <div className="Body">
-        <City />
-        <Temperature />
-        <Icon />
-        <Conditions />
-      </div>
-    );
-  };
+export default function Body() {
+  return (
+    <div className="Body">
+      <City />
+      <Temperature />
+      <Icon />
+      <Conditions />
+    </div>
+  );
 }
