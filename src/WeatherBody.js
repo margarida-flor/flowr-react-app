@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 
 import "./WeatherBody.css";
@@ -10,6 +11,7 @@ export default function WeatherBody(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
@@ -48,47 +50,39 @@ export default function WeatherBody(props) {
             </div>
             <div className="col-6">
               <div className="Details">
-                <div className="row">
-                  <div className="col-4">19:20</div>
-                  <div className="col-4">Monday</div>
-                  <div className="col-4">2019.11.11</div>
+                <FormattedDate date={weatherData.date} />
 
-                  <div className="row">
-                    <div className="col-6" />
-                    <div className="col-6">
-                      <button className="current-place">
-                        Current Location
-                      </button>
-                    </div>
+                <div className="row">
+                  <div className="col-6" />
+                  <div className="col-6">
+                    <button className="current-place">Current Location</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="Body">
-            <div className="City">
-              <span>{weatherData.city}</span>
-            </div>
-            <div className="Temperature">
-              <span className="weather-unit">
-                {Math.round(weatherData.temperature)}
-                <a href="/">°C</a>│<a href="/">°F</a>
-              </span>
-            </div>
-            <div className="weather-icon">
-              <img src={weatherData.icon} alt="" className="mx-auto" />
+        </div>
+        <div className="Body">
+          <div className="City">
+            <span>{weatherData.city}</span>
+          </div>
+          <div className="Temperature">
+            <span className="weather-unit">
+              {Math.round(weatherData.temperature)}
+              <a href="/">°C</a>│<a href="/">°F</a>
+            </span>
+          </div>
+          <div className="weather-icon">
+            <img src={weatherData.icon} alt="" className="mx-auto" />
 
-              <div className="weather-description">
-                {weatherData.description}
-              </div>
-            </div>
-            <div className="current-conditions">
-              Wind:
-              <span> {weatherData.wind} </span>km/h
-              <div>
-                Humidity:
-                <span> {weatherData.humidity}</span>%
-              </div>
+            <div className="weather-description">{weatherData.description}</div>
+          </div>
+          <div className="current-conditions">
+            Wind:
+            <span> {weatherData.wind} </span>km/h
+            <div>
+              Humidity:
+              <span> {weatherData.humidity}</span>%
             </div>
           </div>
         </div>
