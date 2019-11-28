@@ -17,12 +17,9 @@ export default function WeatherBody(props) {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       icon: `http://openweathermap.org/img/wn/10d@2x.png`,
-
       wind: response.data.wind.speed,
       city: response.data.name
     });
-
-    console.log(response.data.weather[0].icon);
   }
 
   function search() {
@@ -32,20 +29,29 @@ export default function WeatherBody(props) {
     axios.get(apiUrl).then(handleResponse);
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
         <div className="Header">
           <div className="row">
             <div className="col-6">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <input
                   type="search"
                   placeholder="Enter a city"
                   className="form-control"
                   autoComplete="off"
+                  onChange={handleCityChange}
                 />
-
                 <input type="submit" value="search" />
               </form>
             </div>
