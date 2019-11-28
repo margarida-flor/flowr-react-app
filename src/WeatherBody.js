@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherDetails from "./WeatherDetails";
 import axios from "axios";
 
 import "./WeatherBody.css";
@@ -62,30 +63,7 @@ export default function WeatherBody(props) {
             </div>
           </div>
         </div>
-        <div className="Body">
-          <div className="City">
-            <span>{weatherData.city}</span>
-          </div>
-          <div className="Temperature">
-            <span className="weather-unit">
-              {Math.round(weatherData.temperature)}
-              <a href="/">°C</a>│<a href="/">°F</a>
-            </span>
-          </div>
-          <div className="weather-icon">
-            <img src={weatherData.icon} alt="" className="mx-auto" />
-
-            <div className="weather-description">{weatherData.description}</div>
-          </div>
-          <div className="current-conditions">
-            Wind:
-            <span> {weatherData.wind} </span>km/h
-            <div>
-              Humidity:
-              <span> {weatherData.humidity}</span>%
-            </div>
-          </div>
-        </div>
+        <WeatherDetails details={weatherData} />
       </div>
     );
   } else {
