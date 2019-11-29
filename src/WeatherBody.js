@@ -52,7 +52,9 @@ export default function WeatherBody(props) {
                   autoComplete="off"
                   onChange={handleCityChange}
                 />
-                <input type="submit" value="search" />
+                <button type="submit" className="search-button">
+                  Search
+                </button>
               </form>
             </div>
             <div className="col-6">
