@@ -16,7 +16,7 @@ export default function WeatherBody(props) {
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      icon: `http://openweathermap.org/img/wn/10d@2x.png`,
+      icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
       city: response.data.name
     });
