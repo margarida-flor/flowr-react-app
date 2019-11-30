@@ -1,5 +1,6 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherDetails(props) {
   return (
@@ -8,10 +9,7 @@ export default function WeatherDetails(props) {
         <span>{props.details.city}</span>
       </div>
       <div className="Temperature">
-        <span className="weather-unit">
-          {Math.round(props.details.temperature)}
-          <a href="/">°C</a>│<a href="/">°F</a>
-        </span>
+        <WeatherTemperature celsius={props.details.temperature} />
       </div>
       <div className="weather-icon">
         <WeatherIcon code={props.details.icon} />
