@@ -43,7 +43,7 @@ export default function WeatherBody(props) {
       <div className="Weather">
         <div className="Header">
           <div className="row">
-            <div className="col-6">
+            <div className="col-5">
               <form onSubmit={handleSubmit}>
                 <input
                   type="search"
@@ -57,15 +57,14 @@ export default function WeatherBody(props) {
                 </button>
               </form>
             </div>
-            <div className="col-6">
+            <div className="col-2" />
+
+            <div className="col-5">
               <div className="Details">
                 <FormattedDate date={weatherData.date} />
-
                 <div className="row">
                   <div className="col-6" />
-                  <div className="col-6">
-                    <button className="current-place">Current Location</button>
-                  </div>
+                  <div className="col-6" />
                 </div>
               </div>
             </div>

@@ -16,7 +16,6 @@
 
 .weather-unit {
   font-size: 20px;
-
   position: relative;
   top: -9px;
 }
@@ -42,8 +41,6 @@
   color: #cc90c8;
   font-size: 15px;
   line-height: 20px;
-  /*margin: 0;
-  padding: 10px;*/
   position: relative;
   right: 20px;
 }
@@ -63,7 +60,6 @@
   padding: 10px 30px;
   line-height: 10px;
   font-weight: 600;
-
   position: relative;
   right: 30px;
   color: floralwhite;

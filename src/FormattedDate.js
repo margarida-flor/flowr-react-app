@@ -12,6 +12,9 @@ export default function FormattedDate(props) {
   ];
   let weekday = weekdays[props.date.getDay()];
   let day = props.date.getDate();
+  if (day < 10) {
+    day = `0${day}`;
+  }
 
   let months = [
     "01",
@@ -41,11 +44,11 @@ export default function FormattedDate(props) {
 
   return (
     <div className="row">
-      <div className="col-4">
+      <div className="col-3">
         {hours}:{minutes}
       </div>
-      <div className="col-4">{weekday}</div>
-      <div className="col-4">
+      <div className="col-3">{weekday}</div>
+      <div className="col-3">
         {year}.{month}.{day}
       </div>
     </div>
